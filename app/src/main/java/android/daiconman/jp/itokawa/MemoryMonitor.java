@@ -59,7 +59,7 @@ public class MemoryMonitor {
 
     // プロセスの使用メモリ合計サイズ(KB)
     public long getTotalPss_AM() {
-        return dmi[0].getTotalPss() * 1024;
+        return dmi[0].getTotalPss();
     }
 
     // 共有メモリーの使用合計サイズ(KB)

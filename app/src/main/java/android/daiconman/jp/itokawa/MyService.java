@@ -38,7 +38,10 @@ public class MyService extends Service{
     private static long totalPss_AM;
     private static long totalSharedDirty_AM;
     private static double cpu_u;
-    private static int brightness;
+
+    // private static int brightness;
+    private static int systemBrightness;
+    private static float windowBrightness;
 
     private static int health;
     private static int icon_small;
@@ -95,8 +98,16 @@ public class MyService extends Service{
         return cpu_u;
     }
 
-    public static int getBrightness() {
-        return brightness;
+//    public static int getBrightness() {
+//        return brightness;
+//    }
+
+    public static int getSystemBrightness() {
+        return systemBrightness;
+    }
+
+    public static float getWindowBrightness() {
+        return windowBrightness * 100;
     }
 
     public static int getHealth() {
@@ -236,7 +247,8 @@ public class MyService extends Service{
                 totalPss_AM = mem.getTotalPss_AM();
                 totalSharedDirty_AM = mem.getTotalSharedDirty_AM();
 
-                brightness = sm.getBrightness();
+                systemBrightness = sm.getSystemBrightness();
+                // windowBrightness = sm.getWindowBrightness();
 
                 health = bm.getHealth();
                 icon_small = bm.getIcon_small();
@@ -271,7 +283,7 @@ public class MyService extends Service{
                             MainActivity.totalPrivateDirty_AMText.setText("TotalPrivateDirty_AM:" + totalPrivateDirty_AM + "Byte");
                             MainActivity.totalPss_AMText.setText("TotalPss_AM:" + totalPss_AM + "Byte");
                             MainActivity.totalSharedDirty_AMText.setText("TotalSharedDirty_AM:" + totalSharedDirty_AM + "Byte");
-                            MainActivity.brightnessText.setText("brightness:" + brightness + "/255");
+                            MainActivity.brightnessText.setText("SystemBrightness:" + systemBrightness);
 
                             MainActivity.healthText.setText("health:" + health);
                             MainActivity.icon_smallText.setText("icon_small:" + icon_small);
