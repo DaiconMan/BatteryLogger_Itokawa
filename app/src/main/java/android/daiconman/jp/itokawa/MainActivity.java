@@ -85,7 +85,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         TextView text01 = (TextView) findViewById(R.id.textView);
-        text01.setText("ふじしゃわくんがんばれー");
+        // text01.setText("ふじしゃわくんがんばれー");
+        text01.setText("");
         text01.setTextSize(30.0f);
 
         cpuText = (TextView) findViewById(R.id.cpuText);
