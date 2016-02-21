@@ -23,9 +23,9 @@ public class ScreenMonitor {
         try {
             // brightness = Settings.System.getString(myContext.getContentResolver(), "screen_brightness");
             systemBrightness = Settings.System.getInt(myContext.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS);
-            Log.w("MyApp", "systemBrightness:" + systemBrightness);
+            // Log.w("MyApp", "systemBrightness:" + systemBrightness);
         } catch (Exception e) {
-            Log.w("MyApp", "エラー:" + e);
+            // Log.w("MyApp", "エラー:" + e);
         }
     }
 
